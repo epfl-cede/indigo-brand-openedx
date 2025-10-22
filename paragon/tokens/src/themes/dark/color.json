@@ -1,195 +1,76 @@
 {
   "$type": "color",
   "color": {
-    "light": {
-      "base": {
-        "$value": "#DDDFE2",
-        "source": "$primary",
-        "actions": {
-          "default": "{color.light.base}"
-        },
-        "$description": "Basic light color, dark theme."
-      }
-    },
     "primary": {
-      "100": {
-        "source": "$primary-100",
-        "actions": {
-          "default": "{color.primary.100}"
-        },
-        "$value": "#8e9fbf",
-        "$description": "Primary color of level 100."
-      },
-      "500": {
-        "source": "$primary-500",
-        "actions": {
-          "default": "{color.primary.500}"
-        },
-        "$value": "#747e92",
-        "$description": "Primary color of level 500."
-      },
       "base": {
         "$value": "#AEC7F6",
         "source": "$primary",
+        "$description": "Basic primary color.",
         "actions": {
-          "default": "{color.primary.base}"
-        },
-        "$description": "Basic primary color, dark theme."
+          "_comment": "This (and the corresponding color.action.default.primary.base at the end of this file,) is somehow needed for all but the light theme, otherwise you get a 'TypeError: Cannot read properties of undefined (reading 'default')' error with no explanation and no context.",
+          "default": "{color.action.default.primary.base}"
+        }
       },
       "light": {
         "$value": "#292A2C",
         "source": "$primary-light",
-        "actions": {
-          "default": "{color.primary.light}"
-        },
-        "$description": "Light primary color, dark theme."
-      },
-      "border": {
-        "$value": "#777792",
-        "source": "$primary-border",
-        "actions": {
-          "default": "{color.primary.border}"
-        },
-        "$description": "Primary border color, dark theme."
-      }
-    },
-    "brand": {
-      "base": {
-        "$value": "#CE80AA",
-        "source": "$brand",
-        "actions": {
-          "default": "{color.brand.base}"
-        },
-        "$description": "Basic brand color, dark theme."
+        "$description": "Light primary color."
       }
     },
     "text": {
       "base": {
         "$value": "#F8F8F8",
         "source": "$text-color",
-        "actions": {
-          "default": "{color.text.base}"
-        },
-        "$description": "Text base color, dark theme."
+        "$description": "Text base color."
       },
       "footer": {
-        "$value": "{color.text.primary}",
-        "source": "$footer-color",
-        "actions": {
-          "default": "{color.text.footer}"
-        },
-        "$description": "Footer text color, dark theme."
+        "$value": "#374151",
+        "source": "$light-dark",
+        "$description": "Footer text color."
       },
       "primary": {
         "$value": "#DDDFE2",
-        "source": "$text-primary",
-        "actions": {
-          "default": "{color.text.primary}"
-        },
-        "$description": "Text primary color, dark theme."
+        "source": "$text-color-primary",
+        "$description": "Text primary color."
       },
       "button": {
         "$value": "#112F6B",
         "source": "$btn-color",
-        "actions": {
-          "default": "{color.text.button}"
-        },
-        "$description": "Button text color, dark theme."
+        "$description": "Button text color."
       }
     },
     "bg": {
-      "info": {
-        "$value": "{color.primary.light}",
-        "$type": "color",
-        "source": "$btn-info-hover-bg"
+      "body": {
+        "$value": "#0D0D0E",
+        "source": "$body-bg",
+        "$description": "Light background overlay color."
       },
       "light-overlay": {
         "$value": "#36383B",
-        "source": "$bg-light-overlay",
-        "actions": {
-          "default": "{color.bg.light-overlay}"
-        },
-        "$description": "Light background overlay color, dark theme."
+        "source": "$light-overlay",
+        "$description": "Light background overlay color."
       },
       "hover": {
         "$value": "#383938",
-        "source": "$bg-hover",
-        "actions": {
-          "default": "{color.bg.hover}"
-        },
-        "$description": "Background hover color, dark theme."
+        "source": "$hover-color",
+        "$description": "Background hover color."
       }
     },
-    "body": {
-      "bg": {
-        "$value": "#0D0D0E",
-        "source": "$body-bg",
-        "actions": {
-          "default": "{color.body.bg}"
-        },
-        "$description": "Body background color, dark theme."
-      },
-      "base": {
-        "$value": "{color.text.base}",
-        "source": "$body-text",
-        "$description": "Light text color, dark theme."
+    "action": {
+      "default": {
+        "primary": {
+          "base": {
+            "source": "$action-default-primary-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.primary.base}"
+          }
+        }
       }
-    },
-    "header": {
-      "bg": {
-        "$value": "#0D0D0E",
-        "source": "$body-bg",
-        "actions": {
-          "default": "{color.body.bg}"
-        },
-        "$description": "Header background color, dark theme."
-      }
-    },
-    "accent": {
-      "a": {
-        "$value": "{color.primary.base}",
-        "source": "$body-bg",
-        "actions": {
-          "default": "{color.body.bg}"
-        },
-        "$description": "Accent color, dark theme."
-      }
-    },
-    "success": {
-      "500": {
-        "source": "$success-500",
-        "actions": {
-          "default": "{color.success.500}"
-        },
-        "$value": "#3a8e41",
-        "$description": "Success color of level 500."
-      },
-      "base": {
-        "$value": "#54CF5E",
-        "source": "$success",
-        "actions": {
-          "default": "{color.success.base}"
-        },
-        "$description": "Basic success color, dark theme."
-      }
-    },
-    "danger": {
-      "base": {
-        "$value": "#FFA07A",
-        "source": "$danger",
-        "actions": {
-          "default": "{color.danger.base}"
-        },
-        "$description": "Basic danger color, dark theme."
-      }
-    },
-    "white": {
-      "$value": "{color.body.bg}",
-      "source": "$light-100",
-      "actions": {
-        "default": "{color.body.bg}"
-      },
-      "$description": "Header background color Profile page."
     }
   }
 }

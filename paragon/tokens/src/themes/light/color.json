@@ -2,21 +2,6 @@
   "$type": "color",
   "color": {
     "primary": {
-      "100": {
-        "source": "$primary-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ],
-        "actions": {
-          "default": "{color.action.default.primary.100}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 100."
-      },
       "base": {
         "$value": "#15376D",
         "source": "$primary",
@@ -48,15 +33,6 @@
         "$value": "#515661",
         "source": "$text-color-primary",
         "$description": "Text primary color."
-      }
-    }
-  },
-  "course": {
-    "card": {
-      "shadow": {
-        "$value": "0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 4px 6px -2px rgba(0, 0, 0, 0.15), 0px 10px 15px -3px rgba(0, 0, 0, 0.15)",
-        "$type": "shadow",
-        "source": "$course-card-shadow"
       }
     }
   }
