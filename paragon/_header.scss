@@ -180,6 +180,17 @@
                 &:before {
                     display: none !important;
                 }
+                &:after {
+                    display: inline-block;
+                    vertical-align: middle;
+                    content: "";
+                    margin: 0 0 2px 8px;
+                    border: 2px solid var(--pgn-color-primary-base);
+                    border-width: 0 0 2px 2px;
+                    transform: rotate(-45deg);
+                    width: 7px;
+                    height: 7px;
+                }
                 .avatar {
                     display: none !important;
                 }
