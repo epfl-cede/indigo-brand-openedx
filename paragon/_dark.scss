@@ -1,4 +1,7 @@
-[data-paragon-theme-variant="dark"] {
+body.indigo-dark-theme {
+    @import "../themes/dark/variables";
+
+
     @import "./header";
     @import "./footer";
     @import "./login";
@@ -13,7 +16,7 @@
     @import "../themes/dark/extras";
 
     color: var(--pgn-color-text-base) !important;
-    background: var(--pgn-color-bg-body) !important;
+    background: var(--pgn-color-body-bg) !important;
     * {
         accent-color: var(--pgn-color-primary-base);
     }
