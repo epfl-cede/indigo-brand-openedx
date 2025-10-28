@@ -1,5 +1,11 @@
 {
   "themeUrls": {
+    "core": {
+      "paths": {
+        "default": "./core.css",
+        "minified": "./core.min.css"
+      }
+    },
     "variants": {
       "red": {
         "paths": {
@@ -7,23 +13,17 @@
           "minified": "./red.min.css"
         }
       },
-      "blue": {
-        "paths": {
-          "default": "./blue.css",
-          "minified": "./blue.min.css"
-        }
-      },
       "green": {
         "paths": {
           "default": "./green.css",
           "minified": "./green.min.css"
         }
-      }
-    },
-    "core": {
-      "paths": {
-        "default": "./core.css",
-        "minified": "./core.min.css"
+      },
+      "blue": {
+        "paths": {
+          "default": "./blue.css",
+          "minified": "./blue.min.css"
+        }
       }
     }
   }
