@@ -1,48 +1,50 @@
 BRANDS := red green blue
 
-#.PHONY: build
-#build:
-#	rm -rf dist && mkdir dist
-#	npm run build-tokens
-#	npm run build-scss
+all: scss dist dist/theme-urls.json
+.PHONY: all
 
-all: core tokens scss
-
-core: clean-core
-#	rm -rf brands/core/build
+tokens-core:
+	rm -rf paragon/build
 	./node_modules/.bin/paragon build-tokens --source ./paragon/tokens/src --build-dir ./paragon/build --themes none --verbose
-#	./node_modules/.bin/paragon build-tokens --source ./brands/core/tokens --build-dir ./brands/core/build --themes none --verbose
-#	cp -R brands/core/build/core build/core
-	cp -R paragon/build/core build/core
+.PHONY: tokens-core
 
-clean-core:
-	rm -rf paragon/build/core
+scss-core: tokens-core
+	rm -rf paragon/dist && mkdir -p paragon/dist
+	./node_modules/.bin/paragon build-scss --corePath ./paragon/core.scss --themesPath ./paragon/build/themes --outDir ./paragon/dist
+.PHONY: scss-core
 
-tokens: clean-tokens tokens-red tokens-green tokens-blue
+define rule_template
 
-clean-tokens:
-	rm -rf build/themes && mkdir -p build/themes
+tokens-$(1):
+	rm -rf brands/$(1)/build
+	./node_modules/.bin/paragon build-tokens --source ./brands/$(1)/tokens --build-dir ./brands/$(1)/build --exclude-core --themes light --verbose
+	mv brands/$(1)/build/themes/light brands/$(1)/build/themes/$(1)
+.PHONY: tokens-$(1)
 
-tokens-red:
-	rm -rf brands/red/build
-	./node_modules/.bin/paragon build-tokens --source ./brands/red/tokens --build-dir ./brands/red/build --exclude-core --themes light --verbose
-	cp -R brands/red/build/themes/light build/themes/red
+# somehow, --excludeCore is slower than without
+scss-$(1): tokens-$(1)
+	rm -rf brands/$(1)/dist && mkdir -p brands/$(1)/dist
+	./node_modules/.bin/paragon build-scss --corePath ./paragon/core.scss --themesPath ./brands/$(1)/build/themes --outDir ./brands/$(1)/dist
+.PHONY: dist-$(1)
 
-tokens-green:
-	rm -rf brands/green/build
-	./node_modules/.bin/paragon build-tokens --source ./brands/green/tokens --build-dir ./brands/green/build --exclude-core --themes light --verbose
-	cp -R brands/green/build/themes/light build/themes/green
+endef
 
-tokens-blue:
-	rm -rf brands/blue/build
-	./node_modules/.bin/paragon build-tokens --source ./brands/blue/tokens --build-dir ./brands/blue/build --exclude-core --themes light --verbose
-	cp -R brands/blue/build/themes/light build/themes/blue
+$(foreach brand,$(BRANDS),$(eval $(call rule_template,$(brand))))
 
 scss:
+	make -j16 scss-core $(patsubst %,scss-%,$(BRANDS))
+.PHONY: scss
+
+dist:
 	rm -rf dist && mkdir -p dist
-	./node_modules/.bin/paragon build-scss --corePath ./paragon/core.scss --themesPath ./build/themes --outDir ./dist
+	cp paragon/dist/core.* dist/
+	for brand in $(BRANDS); do cp brands/$$brand/dist/$$brand.* dist/; done
+.PHONY: dist
+
+# When adding a new brand, `brands/theme-urls.json` has to be updated manually for it to work with `make serve`.
+dist/theme-urls.json: brands/theme-urls.json
+	cp $< $@
 
 serve:
 	./node_modules/.bin/paragon serve-theme-css --host 0.0.0.0
-
-.PHONY: all core clean-core tokens clean-tokens tokens-red tokens-green tokens-blue scss serve
+.PHONY: serve
