@@ -2,8 +2,13 @@
   "$type": "color",
   "color": {
     "primary": {
-      "100": {
-        "source": "$primary-100",
+      "base": {
+        "$value": "#15376D",
+        "source": "$primary",
+        "$description": "Basic primary color."
+      },
+      "light": {
+        "$value": "{color.primary.base}",
         "modify": [
           {
             "type": "mix",
@@ -11,19 +16,6 @@
             "amount": "0.94"
           }
         ],
-        "actions": {
-          "default": "{color.action.default.primary.100}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 100."
-      },
-      "base": {
-        "$value": "#15376D",
-        "source": "$primary",
-        "$description": "Basic primary color."
-      },
-      "light": {
-        "$value": "#F2F7F8",
         "source": "$primary-light",
         "$description": "Light primary color."
       }
