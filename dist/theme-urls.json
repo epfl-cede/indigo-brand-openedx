@@ -1,13 +1,22 @@
 {
   "themeUrls": {
-    "defaults": {
-      "light": "light"
-    },
     "variants": {
-      "light": {
+      "red": {
         "paths": {
-          "default": "./light.css",
-          "minified": "./light.min.css"
+          "default": "./red.css",
+          "minified": "./red.min.css"
+        }
+      },
+      "blue": {
+        "paths": {
+          "default": "./blue.css",
+          "minified": "./blue.min.css"
+        }
+      },
+      "green": {
+        "paths": {
+          "default": "./green.css",
+          "minified": "./green.min.css"
         }
       }
     },
