@@ -3,36 +3,28 @@ BRANDS := red green blue
 all: scss dist dist/theme-urls.json
 .PHONY: all
 
-tokens-core:
-	rm -rf paragon/build
+build-core:
+	rm -rf paragon/build paragon/dist && mkdir -p paragon/dist
 	./node_modules/.bin/paragon build-tokens --source ./paragon/tokens/src --build-dir ./paragon/build --themes none --verbose
-.PHONY: tokens-core
-
-scss-core: tokens-core
-	rm -rf paragon/dist && mkdir -p paragon/dist
 	./node_modules/.bin/paragon build-scss --corePath ./paragon/core.scss --themesPath ./paragon/build/themes --outDir ./paragon/dist
-.PHONY: scss-core
+.PHONY: build-core
 
-define rule_template
+define build_brand_template
 
-tokens-$(1):
-	rm -rf brands/$(1)/build
+# somehow, --excludeCore in build-scss is slower than without
+build-brand-$(1):
+	rm -rf brands/$(1)/build brands/$(1)/dist && mkdir -p brands/$(1)/dist
 	./node_modules/.bin/paragon build-tokens --source ./brands/$(1)/tokens --build-dir ./brands/$(1)/build --exclude-core --themes light --verbose
 	mv brands/$(1)/build/themes/light brands/$(1)/build/themes/$(1)
-.PHONY: tokens-$(1)
-
-# somehow, --excludeCore is slower than without
-scss-$(1): tokens-$(1)
-	rm -rf brands/$(1)/dist && mkdir -p brands/$(1)/dist
 	./node_modules/.bin/paragon build-scss --corePath ./paragon/core.scss --themesPath ./brands/$(1)/build/themes --outDir ./brands/$(1)/dist
-.PHONY: dist-$(1)
+.PHONY: build-brand-$(1)
 
 endef
 
-$(foreach brand,$(BRANDS),$(eval $(call rule_template,$(brand))))
+$(foreach brand,$(BRANDS),$(eval $(call build_brand_template,$(brand))))
 
 scss:
-	make -j16 scss-core $(patsubst %,scss-%,$(BRANDS))
+	make -j16 build-core $(patsubst %,build-brand-%,$(BRANDS))
 .PHONY: scss
 
 dist:
