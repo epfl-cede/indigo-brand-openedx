@@ -1,5 +1,9 @@
 .DS_Store
 .vscode
 /node_modules
-/paragon/build/
+/paragon/build
+/paragon/dist
+/build
 /dist
+/brands/*/build
+/brands/*/dist
