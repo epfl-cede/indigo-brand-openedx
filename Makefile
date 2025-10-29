@@ -1,4 +1,4 @@
-BRANDS := red green blue
+BRANDS := blue epfl ethz ffhs green red sms tdr tue unili usi wur zhaw
 
 all: scss dist dist/theme-urls.json
 .PHONY: all
