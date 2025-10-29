@@ -1,6 +1,13 @@
 {
   "$type": "color",
   "color": {
+    "brand": {
+      "base": {
+        "$value": "#008800",
+        "source": "$brand",
+        "$description": "Basic brand color."
+      }
+    },
     "primary": {
       "base": {
         "$value": "#008800",
@@ -45,7 +52,14 @@
     "dark": {
       "primary": {
         "base": {
-          "$value": "#AEC7F6",
+          "$value": "{color.primary.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "white",
+              "amount": "0.72"
+            }
+          ],
           "$description": "Basic primary color, dark theme."
         },
         "light": {
@@ -59,7 +73,14 @@
       },
       "brand": {
         "base": {
-          "$value": "#CE80AA",
+          "$value": "{color.brand.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "white",
+              "amount": "0.5"
+            }
+          ],
           "$description": "Basic brand color, dark theme."
         }
       },
@@ -77,7 +98,14 @@
           "$description": "Text primary color, dark theme."
         },
         "button": {
-          "$value": "#112F6B",
+          "$value": "{color.primary.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "black",
+              "amount": "0.17"
+            }
+          ],
           "$description": "Button text color, dark theme."
         }
       },
