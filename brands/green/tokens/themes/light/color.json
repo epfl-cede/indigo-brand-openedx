@@ -10,7 +10,7 @@
     },
     "primary": {
       "base": {
-        "$value": "#008800",
+        "$value": "{color.brand.base}",
         "source": "$primary",
         "$description": "Basic primary color."
       },
