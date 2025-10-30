@@ -3,7 +3,7 @@
   "color": {
     "brand": {
       "base": {
-        "$value": "#880000",
+        "$value": "#D0021B",
         "source": "$brand",
         "$description": "Basic brand color."
       }
