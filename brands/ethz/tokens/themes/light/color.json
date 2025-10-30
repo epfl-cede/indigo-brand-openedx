@@ -3,14 +3,14 @@
   "color": {
     "brand": {
       "base": {
-        "$value": "#880000",
+        "$value": "#215CAF",
         "source": "$brand",
         "$description": "Basic brand color."
       }
     },
     "primary": {
       "base": {
-        "$value": "{color.brand.base}",
+        "$value": "#000000",
         "source": "$primary",
         "$description": "Basic primary color."
       },
