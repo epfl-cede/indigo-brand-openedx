@@ -2037,10 +2037,10 @@ footer.tutor-container .logo-list li {
 footer.tutor-container .logo-list li:first-child {
   padding-left: 0;
 }
-footer.tutor-container .logo-list li:last-child {
+footer.tutor-container .logo-list li:nth-child(n+3) {
   padding-left: 20px;
 }
-footer.tutor-container .logo-list li:last-child:after {
+footer.tutor-container .logo-list li:nth-child(n+3):after {
   position: absolute;
   left: 5px;
   top: 50%;
@@ -2088,6 +2088,7 @@ footer.tutor-container .nav-colophon ol li a:hover {
 }
 footer.tutor-container .copyright-site {
   display: block;
+  margin-top: 1.5em;
   font-size: 12px;
   line-height: 16px;
   color: var(--pgn-color-text-footer);
@@ -5135,10 +5136,10 @@ body.indigo-dark-theme footer.tutor-container .logo-list li {
 body.indigo-dark-theme footer.tutor-container .logo-list li:first-child {
   padding-left: 0;
 }
-body.indigo-dark-theme footer.tutor-container .logo-list li:last-child {
+body.indigo-dark-theme footer.tutor-container .logo-list li:nth-child(n+3) {
   padding-left: 20px;
 }
-body.indigo-dark-theme footer.tutor-container .logo-list li:last-child:after {
+body.indigo-dark-theme footer.tutor-container .logo-list li:nth-child(n+3):after {
   position: absolute;
   left: 5px;
   top: 50%;
@@ -5186,6 +5187,7 @@ body.indigo-dark-theme footer.tutor-container .nav-colophon ol li a:hover {
 }
 body.indigo-dark-theme footer.tutor-container .copyright-site {
   display: block;
+  margin-top: 1.5em;
   font-size: 12px;
   line-height: 16px;
   color: var(--pgn-color-text-footer);
