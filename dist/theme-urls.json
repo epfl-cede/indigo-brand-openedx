@@ -1,0 +1,90 @@
+{
+  "themeUrls": {
+    "core": {
+      "paths": {
+        "default": "./core.css",
+        "minified": "./core.min.css"
+      }
+    },
+    "variants": {
+      "blue": {
+        "paths": {
+          "default": "./blue.css",
+          "minified": "./blue.min.css"
+        }
+      },
+      "epfl": {
+        "paths": {
+          "default": "./epfl.css",
+          "minified": "./epfl.min.css"
+        }
+      },
+      "ethz": {
+        "paths": {
+          "default": "./ethz.css",
+          "minified": "./ethz.min.css"
+        }
+      },
+      "ffhs": {
+        "paths": {
+          "default": "./ffhs.css",
+          "minified": "./ffhs.min.css"
+        }
+      },
+      "green": {
+        "paths": {
+          "default": "./green.css",
+          "minified": "./green.min.css"
+        }
+      },
+      "red": {
+        "paths": {
+          "default": "./red.css",
+          "minified": "./red.min.css"
+        }
+      },
+      "sms": {
+        "paths": {
+          "default": "./sms.css",
+          "minified": "./sms.min.css"
+        }
+      },
+      "tdr": {
+        "paths": {
+          "default": "./tdr.css",
+          "minified": "./tdr.min.css"
+        }
+      },
+      "tue": {
+        "paths": {
+          "default": "./tue.css",
+          "minified": "./tue.min.css"
+        }
+      },
+      "unili": {
+        "paths": {
+          "default": "./unili.css",
+          "minified": "./unili.min.css"
+        }
+      },
+      "usi": {
+        "paths": {
+          "default": "./usi.css",
+          "minified": "./usi.min.css"
+        }
+      },
+      "wur": {
+        "paths": {
+          "default": "./wur.css",
+          "minified": "./wur.min.css"
+        }
+      },
+      "zhaw": {
+        "paths": {
+          "default": "./zhaw.css",
+          "minified": "./zhaw.min.css"
+        }
+      }
+    }
+  }
+}
