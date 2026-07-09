@@ -2048,12 +2048,12 @@ footer.tutor-container .logo-list li {
 footer.tutor-container .logo-list li:first-child {
   padding-left: 0;
 }
-footer.tutor-container .logo-list li:last-child {
-  padding-left: 20px;
+footer.tutor-container .logo-list li:not(:first-child):not(:last-child) {
+  padding-right: 20px;
 }
-footer.tutor-container .logo-list li:last-child:after {
+footer.tutor-container .logo-list li:not(:first-child):not(:last-child):after {
   position: absolute;
-  left: 5px;
+  right: 5px;
   top: 50%;
   content: "";
   width: 1px;
@@ -5148,12 +5148,12 @@ body.indigo-dark-theme footer.tutor-container .logo-list li {
 body.indigo-dark-theme footer.tutor-container .logo-list li:first-child {
   padding-left: 0;
 }
-body.indigo-dark-theme footer.tutor-container .logo-list li:last-child {
-  padding-left: 20px;
+body.indigo-dark-theme footer.tutor-container .logo-list li:not(:first-child):not(:last-child) {
+  padding-right: 20px;
 }
-body.indigo-dark-theme footer.tutor-container .logo-list li:last-child:after {
+body.indigo-dark-theme footer.tutor-container .logo-list li:not(:first-child):not(:last-child):after {
   position: absolute;
-  left: 5px;
+  right: 5px;
   top: 50%;
   content: "";
   width: 1px;
