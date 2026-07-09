@@ -2098,6 +2098,7 @@ footer.tutor-container .nav-colophon ol li a:hover {
 }
 footer.tutor-container .copyright-site {
   display: block;
+  margin-top: 1.5em;
   font-size: 12px;
   line-height: 16px;
   color: var(--pgn-color-text-footer);
@@ -5197,6 +5198,7 @@ body.indigo-dark-theme footer.tutor-container .nav-colophon ol li a:hover {
 }
 body.indigo-dark-theme footer.tutor-container .copyright-site {
   display: block;
+  margin-top: 1.5em;
   font-size: 12px;
   line-height: 16px;
   color: var(--pgn-color-text-footer);
