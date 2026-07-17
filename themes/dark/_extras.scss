@@ -975,54 +975,6 @@ a.discussion-post {
             -moz-box-shadow: 110px -100px 100px 90px rgba(#36383B, 0.55);
         }
     }
-    .container-fluid {
-        .row {
-            .pgn-transition-replace-group {
-                border: 1px solid var(--pgn-color-primary-light);
-                border-left: 8px solid var(--pgn-color-primary-light);
-                .col-sm-6.d-flex.align-items-stretch {
-                    .card-body {
-                        a.default-link {
-                            &:after {
-                                color: var(--pgn-color-text-button)
-                            }
-
-                        }
-                    }
-                }
-                .editable-item-header {
-                    button {
-                        color: var(--pgn-color-text-button);
-                    }
-                }
-                .editable-item-header + div {
-                    button {
-                        color: var(--pgn-color-text-base);
-                    }
-                }
-                .editable-item-header + .list-unstyled {
-                    li {
-                        button {
-                            color: var(--pgn-color-text-base);
-                        }
-                    }
-                }
-            }
-            form {
-                .form-group {
-                    &.flex-shrink-0.flex-grow-1 {
-                        button {
-                            color: var(--pgn-color-text-button);
-                            &.btn-link {
-                                background: var(--pgn-color-body-bg) !important;
-                                color: var(--pgn-color-text-base);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
     .rounded-circle.bg-light {
         background: var(--pgn-color-primary-light) !important;
     }
