@@ -981,15 +981,12 @@ body {
 .course-outline-section .pt-4 > .mx-0.row {
   background: var(--pgn-color-body-bg) !important;
   box-shadow: var(--pgn-course-card-shadow) !important;
-  border-left-color: var(--pgn-color-primary-base) !important;
 }
 .section-card__subsections > .mx-0.row {
   background: var(--pgn-color-bg-hover) !important;
-  border-left-color: var(--pgn-color-primary-base) !important;
 }
 .subsection-card__units > .mx-0.row {
   background: var(--pgn-color-body-bg) !important;
-  border-left-color: var(--pgn-color-primary-base) !important;
 }
 #root .x-small {
   font-size: 14px;

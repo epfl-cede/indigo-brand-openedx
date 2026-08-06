@@ -32,7 +32,9 @@ body {
   .pt-4 > .mx-0.row {
     background: var(--pgn-color-body-bg) !important;
     box-shadow: var(--pgn-course-card-shadow) !important;
-    border-left-color: var(--pgn-color-primary-base) !important;
+    // border-left-color is set by inline styles in the MFE (getItemStatusBorder)
+    // with status-dependent colors: blue for live, yellow for draft, etc.
+    // Do NOT override with the theme primary color.
   }
 }
 
@@ -40,7 +42,6 @@ body {
 
   > .mx-0.row {
     background: var(--pgn-color-bg-hover) !important;
-    border-left-color: var(--pgn-color-primary-base) !important;
   }
 }
 
@@ -48,7 +49,6 @@ body {
 
   > .mx-0.row {
     background: var(--pgn-color-body-bg) !important;
-    border-left-color: var(--pgn-color-primary-base) !important;
   }
 }
 
